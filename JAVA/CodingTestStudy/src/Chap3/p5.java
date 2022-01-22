@@ -32,8 +32,6 @@ public class p5 {
 			else sum += a[i];
 		}
 		System.out.println(sum);
-		
-		
 	}
 
 }
