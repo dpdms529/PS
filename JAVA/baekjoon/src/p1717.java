@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class p1717 {
 
     // 노드의 개수(V)와 간선(Union 연산)의 개수(E)
-    // 노드의 개수는 최대 100,000개라고 가정
+    // 노드의 개수는 최대 1,000,000개라고 가정
     public static int n, m;
     public static int[] parent = new int[1000001]; // 부모 테이블 초기화하기
 
