@@ -2,39 +2,36 @@ import java.util.*;
 import java.io.*;
 
 public class p2023 {
+	public static int n = 0;
+	
+	public static boolean isPrime(int n) {
+		if(n<2) return false;
+		for(int i = 2;i<=Math.sqrt(n);i++) {
+			if(n%i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public static void findInteresting(int num, int d) {
+		if(d==n)System.out.println(num);
+		else {
+			for(int i = 1;i<10;i+=2) {
+				int tmp = num * 10 + i;
+				if(isPrime(tmp)) {
+					findInteresting(tmp,d+1);
+				}
+			}
+		}
+	}
 
 	public static void main(String[] args)throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(br.readLine());
-		int start = (int)Math.pow(10, n-1);
-		int end = (int)Math.pow(10, n);
-		
-		boolean arr[] = new boolean[end];
-		Arrays.fill(arr, true);
-		arr[0] = false;
-		arr[1] = false;
-		for(int i = 2;i<=Math.sqrt(end-1);i++) {
-			if(arr[i]) {
-				for(int j = i+i;j<end;j+=i) {
-					arr[j] = false;
-				}
-				
-			}
-
-		}
-		
-		while(start < end) {
-			int d = 1;
-			boolean isInteresting = true;
-			for(int i = 0;i<n;i++) {
-				if(!arr[start/d]) {
-					isInteresting = false;
-					break;
-				}
-				d *= 10;
-			}
-			if(isInteresting) System.out.println(start);
-			start++;
+		n = Integer.parseInt(br.readLine());
+		int prime[] = {2, 3, 5, 7};
+		for(int i = 0;i<4;i++) {
+			findInteresting(prime[i],1);
 		}
 	}
 
