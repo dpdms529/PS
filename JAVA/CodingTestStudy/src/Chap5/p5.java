@@ -28,6 +28,7 @@ public class p5 {
 				}
 			}
 		}
+
 		if(d[m] == 10001) System.out.println(-1);
 		else System.out.println(d[m]);
 		
