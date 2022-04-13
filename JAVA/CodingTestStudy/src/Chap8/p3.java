@@ -3,23 +3,23 @@ package Chap8;
 import java.util.*;
 
 class p3 {
-    public static int n = 5; // µ¥ÀÌÅÍÀÇ °³¼ö N
-    public static int m = 5; // Ã£°íÀÚ ÇÏ´Â ºÎºĞÇÕ M
-    public static int[] arr = {1, 2, 3, 2, 5}; // ÀüÃ¼ ¼ö¿­
+    public static int n = 5; // ë°ì´í„°ì˜ ê°œìˆ˜ N
+    public static int m = 5; // ì°¾ê³ ì í•˜ëŠ” ë¶€ë¶„í•© M
+    public static int[] arr = {1, 2, 3, 2, 5}; // ì „ì²´ ìˆ˜ì—´
 
     public static void main(String[] args) {
         int cnt = 0;
         int intervalSum = 0;
         int end = 0;
 
-        // start¸¦ Â÷·Ê´ë·Î Áõ°¡½ÃÅ°¸ç ¹İº¹
+        // startë¥¼ ì°¨ë¡€ëŒ€ë¡œ ì¦ê°€ì‹œí‚¤ë©° ë°˜ë³µ
         for (int start = 0; start < n; start++) {
-            // end¸¦ °¡´ÉÇÑ ¸¸Å­ ÀÌµ¿½ÃÅ°±â
+            // endë¥¼ ê°€ëŠ¥í•œ ë§Œí¼ ì´ë™ì‹œí‚¤ê¸°
             while (intervalSum < m && end < n) {
                 intervalSum += arr[end];
                 end += 1;
             }
-            // ºÎºĞÇÕÀÌ mÀÏ ¶§ Ä«¿îÆ® Áõ°¡
+            // ë¶€ë¶„í•©ì´ mì¼ ë•Œ ì¹´ìš´íŠ¸ ì¦ê°€
             if (intervalSum == m) {
                 cnt += 1;
             }

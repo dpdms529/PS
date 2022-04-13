@@ -26,7 +26,7 @@ class Edge implements Comparable<Edge> {
         return this.nodeB;
     }
 
-    // °Å¸®(ºñ¿ë)°¡ ÂªÀº °ÍÀÌ ³ôÀº ¿ì¼±¼øÀ§¸¦ °¡Áöµµ·Ï ¼³Á¤
+    // ê±°ë¦¬(ë¹„ìš©)ê°€ ì§§ì€ ê²ƒì´ ë†’ì€ ìš°ì„ ìˆœìœ„ë¥¼ ê°€ì§€ë„ë¡ ì„¤ì •
     @Override
     public int compareTo(Edge other) {
         if (this.distance < other.distance) {
@@ -38,22 +38,22 @@ class Edge implements Comparable<Edge> {
 
 public class p4 {
 
-    // ³ëµåÀÇ °³¼ö(V)¿Í °£¼±(Union ¿¬»ê)ÀÇ °³¼ö(E)
-    // ³ëµåÀÇ °³¼ö´Â ÃÖ´ë 100,000°³¶ó°í °¡Á¤
+    // ë…¸ë“œì˜ ê°œìˆ˜(V)ì™€ ê°„ì„ (Union ì—°ì‚°)ì˜ ê°œìˆ˜(E)
+    // ë…¸ë“œì˜ ê°œìˆ˜ëŠ” ìµœëŒ€ 100,000ê°œë¼ê³  ê°€ì •
     public static int v, e;
-    public static int[] parent = new int[100001]; // ºÎ¸ğ Å×ÀÌºí ÃÊ±âÈ­ÇÏ±â
-    // ¸ğµç °£¼±À» ´ãÀ» ¸®½ºÆ®¿Í, ÃÖÁ¾ ºñ¿ëÀ» ´ãÀ» º¯¼ö
+    public static int[] parent = new int[100001]; // ë¶€ëª¨ í…Œì´ë¸” ì´ˆê¸°í™”í•˜ê¸°
+    // ëª¨ë“  ê°„ì„ ì„ ë‹´ì„ ë¦¬ìŠ¤íŠ¸ì™€, ìµœì¢… ë¹„ìš©ì„ ë‹´ì„ ë³€ìˆ˜
     public static ArrayList<Edge> edges = new ArrayList<>();
     public static int result = 0;
 
-    // Æ¯Á¤ ¿ø¼Ò°¡ ¼ÓÇÑ ÁıÇÕÀ» Ã£±â
+    // íŠ¹ì • ì›ì†Œê°€ ì†í•œ ì§‘í•©ì„ ì°¾ê¸°
     public static int findParent(int x) {
-        // ·çÆ® ³ëµå°¡ ¾Æ´Ï¶ó¸é, ·çÆ® ³ëµå¸¦ Ã£À» ¶§±îÁö Àç±ÍÀûÀ¸·Î È£Ãâ
+        // ë£¨íŠ¸ ë…¸ë“œê°€ ì•„ë‹ˆë¼ë©´, ë£¨íŠ¸ ë…¸ë“œë¥¼ ì°¾ì„ ë•Œê¹Œì§€ ì¬ê·€ì ìœ¼ë¡œ í˜¸ì¶œ
         if (x == parent[x]) return x;
         return parent[x] = findParent(parent[x]);
     }
 
-    // µÎ ¿ø¼Ò°¡ ¼ÓÇÑ ÁıÇÕÀ» ÇÕÄ¡±â
+    // ë‘ ì›ì†Œê°€ ì†í•œ ì§‘í•©ì„ í•©ì¹˜ê¸°
     public static void unionParent(int a, int b) {
         a = findParent(a);
         b = findParent(b);
@@ -67,12 +67,12 @@ public class p4 {
         v = sc.nextInt();
         e = sc.nextInt();
 
-        // ºÎ¸ğ Å×ÀÌºí»ó¿¡¼­, ºÎ¸ğ¸¦ ÀÚ±â ÀÚ½ÅÀ¸·Î ÃÊ±âÈ­
+        // ë¶€ëª¨ í…Œì´ë¸”ìƒì—ì„œ, ë¶€ëª¨ë¥¼ ìê¸° ìì‹ ìœ¼ë¡œ ì´ˆê¸°í™”
         for (int i = 1; i <= v; i++) {
             parent[i] = i;
         }
 
-        // ¸ğµç °£¼±¿¡ ´ëÇÑ Á¤º¸¸¦ ÀÔ·Â ¹Ş±â
+        // ëª¨ë“  ê°„ì„ ì— ëŒ€í•œ ì •ë³´ë¥¼ ì…ë ¥ ë°›ê¸°
         for (int i = 0; i < e; i++) {
             int a = sc.nextInt();
             int b = sc.nextInt();
@@ -80,15 +80,15 @@ public class p4 {
             edges.add(new Edge(cost, a, b));
         }
 
-        // °£¼±À» ºñ¿ë¼øÀ¸·Î Á¤·Ä
+        // ê°„ì„ ì„ ë¹„ìš©ìˆœìœ¼ë¡œ ì •ë ¬
         Collections.sort(edges);
 
-        // °£¼±À» ÇÏ³ª¾¿ È®ÀÎÇÏ¸ç
+        // ê°„ì„ ì„ í•˜ë‚˜ì”© í™•ì¸í•˜ë©°
         for (int i = 0; i < edges.size(); i++) {
             int cost = edges.get(i).getDistance();
             int a = edges.get(i).getNodeA();
             int b = edges.get(i).getNodeB();
-            // »çÀÌÅ¬ÀÌ ¹ß»ıÇÏÁö ¾Ê´Â °æ¿ì¿¡¸¸ ÁıÇÕ¿¡ Æ÷ÇÔ
+            // ì‚¬ì´í´ì´ ë°œìƒí•˜ì§€ ì•ŠëŠ” ê²½ìš°ì—ë§Œ ì§‘í•©ì— í¬í•¨
             if (findParent(a) != findParent(b)) {
                 unionParent(a, b);
                 result += cost;

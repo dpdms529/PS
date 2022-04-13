@@ -4,19 +4,19 @@ import java.util.*;
 
 public class p3 {
 
-    // ³ëµåÀÇ °³¼ö(V)¿Í °£¼±(Union ¿¬»ê)ÀÇ °³¼ö(E)
-    // ³ëµåÀÇ °³¼ö´Â ÃÖ´ë 100,000°³¶ó°í °¡Á¤
+    // ë…¸ë“œì˜ ê°œìˆ˜(V)ì™€ ê°„ì„ (Union ì—°ì‚°)ì˜ ê°œìˆ˜(E)
+    // ë…¸ë“œì˜ ê°œìˆ˜ëŠ” ìµœëŒ€ 100,000ê°œë¼ê³  ê°€ì •
     public static int v, e;
-    public static int[] parent = new int[100001]; // ºÎ¸ğ Å×ÀÌºí ÃÊ±âÈ­ÇÏ±â
+    public static int[] parent = new int[100001]; // ë¶€ëª¨ í…Œì´ë¸” ì´ˆê¸°í™”í•˜ê¸°
 
-    // Æ¯Á¤ ¿ø¼Ò°¡ ¼ÓÇÑ ÁıÇÕÀ» Ã£±â
+    // íŠ¹ì • ì›ì†Œê°€ ì†í•œ ì§‘í•©ì„ ì°¾ê¸°
     public static int findParent(int x) {
-        // ·çÆ® ³ëµå°¡ ¾Æ´Ï¶ó¸é, ·çÆ® ³ëµå¸¦ Ã£À» ¶§±îÁö Àç±ÍÀûÀ¸·Î È£Ãâ
+        // ë£¨íŠ¸ ë…¸ë“œê°€ ì•„ë‹ˆë¼ë©´, ë£¨íŠ¸ ë…¸ë“œë¥¼ ì°¾ì„ ë•Œê¹Œì§€ ì¬ê·€ì ìœ¼ë¡œ í˜¸ì¶œ
         if (x == parent[x]) return x;
         return parent[x] = findParent(parent[x]);
     }
 
-    // µÎ ¿ø¼Ò°¡ ¼ÓÇÑ ÁıÇÕÀ» ÇÕÄ¡±â
+    // ë‘ ì›ì†Œê°€ ì†í•œ ì§‘í•©ì„ í•©ì¹˜ê¸°
     public static void unionParent(int a, int b) {
         a = findParent(a);
         b = findParent(b);
@@ -30,32 +30,32 @@ public class p3 {
         v = sc.nextInt();
         e = sc.nextInt();
 
-        // ºÎ¸ğ Å×ÀÌºí»ó¿¡¼­, ºÎ¸ğ¸¦ ÀÚ±â ÀÚ½ÅÀ¸·Î ÃÊ±âÈ­
+        // ë¶€ëª¨ í…Œì´ë¸”ìƒì—ì„œ, ë¶€ëª¨ë¥¼ ìê¸° ìì‹ ìœ¼ë¡œ ì´ˆê¸°í™”
         for (int i = 1; i <= v; i++) {
             parent[i] = i;
         }
 
-        boolean cycle = false; // »çÀÌÅ¬ ¹ß»ı ¿©ºÎ
+        boolean cycle = false; // ì‚¬ì´í´ ë°œìƒ ì—¬ë¶€
 
         for (int i = 0; i < e; i++) {
             int a = sc.nextInt();
             int b = sc.nextInt();
-            // »çÀÌÅ¬ÀÌ ¹ß»ıÇÑ °æ¿ì Á¾·á
+            // ì‚¬ì´í´ì´ ë°œìƒí•œ ê²½ìš° ì¢…ë£Œ
             if (findParent(a) == findParent(b)) {
                 cycle = true;
                 break;
             }
-            // »çÀÌÅ¬ÀÌ ¹ß»ıÇÏÁö ¾Ê¾Ò´Ù¸é ÇÕÁıÇÕ(Union) ¿¬»ê ¼öÇà
+            // ì‚¬ì´í´ì´ ë°œìƒí•˜ì§€ ì•Šì•˜ë‹¤ë©´ í•©ì§‘í•©(Union) ì—°ì‚° ìˆ˜í–‰
             else {
                 unionParent(a, b);
             }
         }
 
         if (cycle) {
-            System.out.println("»çÀÌÅ¬ÀÌ ¹ß»ıÇß½À´Ï´Ù.");
+            System.out.println("ì‚¬ì´í´ì´ ë°œìƒí–ˆìŠµë‹ˆë‹¤.");
         }
         else {
-            System.out.println("»çÀÌÅ¬ÀÌ ¹ß»ıÇÏÁö ¾Ê¾Ò½À´Ï´Ù.");
+            System.out.println("ì‚¬ì´í´ì´ ë°œìƒí•˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
         }
     }
 }

@@ -3,15 +3,15 @@ package Chap2;
 import java.util.*;
 
 public class p3 {
-	
+
 	public static boolean[] visited = new boolean[9];
 	public static ArrayList<ArrayList<Integer>> graph = new ArrayList<ArrayList<Integer>>();
-	
+
 	public static void dfs(int x) {
-		//ÇöÀç ³ëµå¸¦ ¹æ¹® Ã³¸®
+		//í˜„ì¬ ë…¸ë“œë¥¼ ë°©ë¬¸ ì²˜ë¦¬
 		visited[x] = true;
 		System.out.print(x + " ");
-		//ÇöÀç ³ëµå¿¡ ¿¬°áµÈ ´Ù¸¥ ³ëµå¸¦ Àç±ÍÀûÀ¸·Î ¹æ¹®
+		//í˜„ì¬ ë…¸ë“œì— ì—°ê²°ëœ ë‹¤ë¥¸ ë…¸ë“œë¥¼ ì¬ê·€ì ìœ¼ë¡œ ë°©ë¬¸
 		for(int i = 0;i<graph.get(x).size();i++) {
 			int y = graph.get(x).get(i);
 			if(!visited[y]) dfs(y);
@@ -19,35 +19,35 @@ public class p3 {
 	}
 
 	public static void main(String[] args) {
-		//±×·¡ÇÁ ÃÊ±âÈ­
+		//ê·¸ë˜í”„ ì´ˆê¸°í™”
 		for(int i = 0;i<9;i++) {
 			graph.add(new ArrayList<Integer>());
 		}
-		
-		//³ëµå 1¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
+
+		//ë…¸ë“œ 1ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
 		graph.get(1).addAll(List.of(2,3,8));
-		
-		//³ëµå 2¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
+
+		//ë…¸ë“œ 2ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
 		graph.get(2).addAll(List.of(1,7));
-		
-		//³ëµå 3¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
+
+		//ë…¸ë“œ 3ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
 		graph.get(3).addAll(List.of(1,4,5));
-		
-		//³ëµå 4¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
+
+		//ë…¸ë“œ 4ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
 		graph.get(4).addAll(List.of(3,5));
 
-		//³ëµå 5¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
+		//ë…¸ë“œ 5ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
 		graph.get(5).addAll(List.of(3,4));
-		
-		//³ëµå 6¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
+
+		//ë…¸ë“œ 6ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
 		graph.get(6).addAll(List.of(7));
-		
-		//³ëµå 7¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
+
+		//ë…¸ë“œ 7ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
 		graph.get(7).addAll(List.of(2,6,8));
-		
-		//³ëµå 8¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
+
+		//ë…¸ë“œ 8ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
 		graph.get(8).addAll(List.of(1,7));
-		
+
 		dfs(1);
 	}
 

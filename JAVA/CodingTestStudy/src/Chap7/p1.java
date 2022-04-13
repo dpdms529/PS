@@ -4,19 +4,19 @@ import java.util.*;
 
 public class p1 {
 
-    // ³ëµåÀÇ °³¼ö(V)¿Í °£¼±(Union ¿¬»ê)ÀÇ °³¼ö(E)
-    // ³ëµåÀÇ °³¼ö´Â ÃÖ´ë 100,000°³¶ó°í °¡Á¤
+    // ë…¸ë“œì˜ ê°œìˆ˜(V)ì™€ ê°„ì„ (Union ì—°ì‚°)ì˜ ê°œìˆ˜(E)
+    // ë…¸ë“œì˜ ê°œìˆ˜ëŠ” ìµœëŒ€ 100,000ê°œë¼ê³  ê°€ì •
     public static int v, e;
-    public static int[] parent = new int[100001]; // ºÎ¸ğ Å×ÀÌºí ÃÊ±âÈ­ÇÏ±â
+    public static int[] parent = new int[100001]; // ë¶€ëª¨ í…Œì´ë¸” ì´ˆê¸°í™”í•˜ê¸°
 
-    // Æ¯Á¤ ¿ø¼Ò°¡ ¼ÓÇÑ ÁıÇÕÀ» Ã£±â
+    // íŠ¹ì • ì›ì†Œê°€ ì†í•œ ì§‘í•©ì„ ì°¾ê¸°
     public static int findParent(int x) {
-        // ·çÆ® ³ëµå°¡ ¾Æ´Ï¶ó¸é, ·çÆ® ³ëµå¸¦ Ã£À» ¶§±îÁö Àç±ÍÀûÀ¸·Î È£Ãâ
+        // ë£¨íŠ¸ ë…¸ë“œê°€ ì•„ë‹ˆë¼ë©´, ë£¨íŠ¸ ë…¸ë“œë¥¼ ì°¾ì„ ë•Œê¹Œì§€ ì¬ê·€ì ìœ¼ë¡œ í˜¸ì¶œ
         if (x == parent[x]) return x;
         return findParent(parent[x]);
     }
 
-    // µÎ ¿ø¼Ò°¡ ¼ÓÇÑ ÁıÇÕÀ» ÇÕÄ¡±â
+    // ë‘ ì›ì†Œê°€ ì†í•œ ì§‘í•©ì„ í•©ì¹˜ê¸°
     public static void unionParent(int a, int b) {
         a = findParent(a);
         b = findParent(b);
@@ -30,27 +30,27 @@ public class p1 {
         v = sc.nextInt();
         e = sc.nextInt();
 
-        // ºÎ¸ğ Å×ÀÌºí»ó¿¡¼­, ºÎ¸ğ¸¦ ÀÚ±â ÀÚ½ÅÀ¸·Î ÃÊ±âÈ­
+        // ë¶€ëª¨ í…Œì´ë¸”ìƒì—ì„œ, ë¶€ëª¨ë¥¼ ìê¸° ìì‹ ìœ¼ë¡œ ì´ˆê¸°í™”
         for (int i = 1; i <= v; i++) {
             parent[i] = i;
         }
 
-        // Union ¿¬»êÀ» °¢°¢ ¼öÇà
+        // Union ì—°ì‚°ì„ ê°ê° ìˆ˜í–‰
         for (int i = 0; i < e; i++) {
             int a = sc.nextInt();
             int b = sc.nextInt();
             unionParent(a, b);
         }
 
-        // °¢ ¿ø¼Ò°¡ ¼ÓÇÑ ÁıÇÕ Ãâ·ÂÇÏ±â
-        System.out.print("°¢ ¿ø¼Ò°¡ ¼ÓÇÑ ÁıÇÕ: ");
+        // ê° ì›ì†Œê°€ ì†í•œ ì§‘í•© ì¶œë ¥í•˜ê¸°
+        System.out.print("ê° ì›ì†Œê°€ ì†í•œ ì§‘í•©: ");
         for (int i = 1; i <= v; i++) {
             System.out.print(findParent(i) + " ");
         }
         System.out.println();
 
-        // ºÎ¸ğ Å×ÀÌºí ³»¿ë Ãâ·ÂÇÏ±â
-        System.out.print("ºÎ¸ğ Å×ÀÌºí: ");
+        // ë¶€ëª¨ í…Œì´ë¸” ë‚´ìš© ì¶œë ¥í•˜ê¸°
+        System.out.print("ë¶€ëª¨ í…Œì´ë¸”: ");
         for (int i = 1; i <= v; i++) {
             System.out.print(parent[i] + " ");
         }

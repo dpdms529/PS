@@ -3,21 +3,21 @@ package Chap2;
 import java.util.*;
 
 public class p4 {
-	
+
 	public static boolean[] visited = new boolean[9];
 	public static ArrayList<ArrayList<Integer>> graph = new ArrayList<ArrayList<Integer>>();
-	
+
 	public static void bfs(int start) {
 		Queue<Integer> q = new LinkedList<>();
 		q.offer(start);
-		//ÇöÀç ³ëµå¸¦ ¹æ¹® Ã³¸®
+		//í˜„ì¬ ë…¸ë“œë¥¼ ë°©ë¬¸ ì²˜ë¦¬
 		visited[start] = true;
-		//Å¥°¡ ºô ¶§±îÁö ¹İº¹
+		//íê°€ ë¹Œ ë•Œê¹Œì§€ ë°˜ë³µ
 		while(!q.isEmpty()) {
-			//Å¥¿¡¼­ ÇÏ³ªÀÇ ¿ø¼Ò¸¦ »Ì¾Æ Ãâ·Â
+			//íì—ì„œ í•˜ë‚˜ì˜ ì›ì†Œë¥¼ ë½‘ì•„ ì¶œë ¥
 			int x = q.poll();
 			System.out.print(x + " ");
-			//ÇØ´ç ¿ø¼Ò¿Í ¿¬°áµÈ, ¾ÆÁ÷ ¹æ¹®ÇÏÁö ¾ÊÀº ¿ø¼ÒµéÀ» Å¥¿¡ »ğÀÔ
+			//í•´ë‹¹ ì›ì†Œì™€ ì—°ê²°ëœ, ì•„ì§ ë°©ë¬¸í•˜ì§€ ì•Šì€ ì›ì†Œë“¤ì„ íì— ì‚½ì…
 			for(int i = 0;i<graph.get(x).size();i++) {
 				int y = graph.get(x).get(i);
 				if(!visited[y]) {
@@ -29,36 +29,36 @@ public class p4 {
 	}
 
 	public static void main(String[] args) {
-		//±×·¡ÇÁ ÃÊ±âÈ­
-				for(int i = 0;i<9;i++) {
-					graph.add(new ArrayList<Integer>());
-				}
-				
-				//³ëµå 1¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
-				graph.get(1).addAll(List.of(2,3,8));
-				
-				//³ëµå 2¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
-				graph.get(2).addAll(List.of(1,7));
-				
-				//³ëµå 3¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
-				graph.get(3).addAll(List.of(1,4,5));
-				
-				//³ëµå 4¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
-				graph.get(4).addAll(List.of(3,5));
+		//ê·¸ë˜í”„ ì´ˆê¸°í™”
+		for(int i = 0;i<9;i++) {
+			graph.add(new ArrayList<Integer>());
+		}
 
-				//³ëµå 5¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
-				graph.get(5).addAll(List.of(3,4));
-				
-				//³ëµå 6¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
-				graph.get(6).addAll(List.of(7));
-				
-				//³ëµå 7¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
-				graph.get(7).addAll(List.of(2,6,8));
-				
-				//³ëµå 8¿¡ ¿¬°áµÈ ³ëµå Á¤º¸ ÀúÀå
-				graph.get(8).addAll(List.of(1,7));
-				
-				bfs(1);
+		//ë…¸ë“œ 1ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+		graph.get(1).addAll(List.of(2,3,8));
+
+		//ë…¸ë“œ 2ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+		graph.get(2).addAll(List.of(1,7));
+
+		//ë…¸ë“œ 3ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+		graph.get(3).addAll(List.of(1,4,5));
+
+		//ë…¸ë“œ 4ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+		graph.get(4).addAll(List.of(3,5));
+
+		//ë…¸ë“œ 5ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+		graph.get(5).addAll(List.of(3,4));
+
+		//ë…¸ë“œ 6ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+		graph.get(6).addAll(List.of(7));
+
+		//ë…¸ë“œ 7ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+		graph.get(7).addAll(List.of(2,6,8));
+
+		//ë…¸ë“œ 8ì— ì—°ê²°ëœ ë…¸ë“œ ì •ë³´ ì €ì¥
+		graph.get(8).addAll(List.of(1,7));
+
+		bfs(1);
 	}
 
 }

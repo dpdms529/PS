@@ -4,42 +4,42 @@ import java.util.*;
 
 public class p5 {
 
-    // ³ëµåÀÇ °³¼ö(V)¿Í °£¼±ÀÇ °³¼ö(E)
-    // ³ëµåÀÇ °³¼ö´Â ÃÖ´ë 100,000°³¶ó°í °¡Á¤
+    // ë…¸ë“œì˜ ê°œìˆ˜(V)ì™€ ê°„ì„ ì˜ ê°œìˆ˜(E)
+    // ë…¸ë“œì˜ ê°œìˆ˜ëŠ” ìµœëŒ€ 100,000ê°œë¼ê³  ê°€ì •
     public static int v, e;
-    // ¸ğµç ³ëµå¿¡ ´ëÇÑ ÁøÀÔÂ÷¼ö´Â 0À¸·Î ÃÊ±âÈ­
+    // ëª¨ë“  ë…¸ë“œì— ëŒ€í•œ ì§„ì…ì°¨ìˆ˜ëŠ” 0ìœ¼ë¡œ ì´ˆê¸°í™”
     public static int[] indegree = new int[100001];
-    // °¢ ³ëµå¿¡ ¿¬°áµÈ °£¼± Á¤º¸¸¦ ´ã±â À§ÇÑ ¿¬°á ¸®½ºÆ® ÃÊ±âÈ­
+    // ê° ë…¸ë“œì— ì—°ê²°ëœ ê°„ì„  ì •ë³´ë¥¼ ë‹´ê¸° ìœ„í•œ ì—°ê²° ë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”
     public static ArrayList<ArrayList<Integer>> graph = new ArrayList<ArrayList<Integer>>();
 
-    // À§»ó Á¤·Ä ÇÔ¼ö
+    // ìœ„ìƒ ì •ë ¬ í•¨ìˆ˜
     public static void topologySort() {
-        ArrayList<Integer> result = new ArrayList<>(); // ¾Ë°í¸®Áò ¼öÇà °á°ú¸¦ ´ãÀ» ¸®½ºÆ®
-        Queue<Integer> q = new LinkedList<>(); // Å¥ ¶óÀÌºê·¯¸® »ç¿ë
+        ArrayList<Integer> result = new ArrayList<>(); // ì•Œê³ ë¦¬ì¦˜ ìˆ˜í–‰ ê²°ê³¼ë¥¼ ë‹´ì„ ë¦¬ìŠ¤íŠ¸
+        Queue<Integer> q = new LinkedList<>(); // í ë¼ì´ë¸ŒëŸ¬ë¦¬ ì‚¬ìš©
 
-        // Ã³À½ ½ÃÀÛÇÒ ¶§´Â ÁøÀÔÂ÷¼ö°¡ 0ÀÎ ³ëµå¸¦ Å¥¿¡ »ğÀÔ
+        // ì²˜ìŒ ì‹œì‘í•  ë•ŒëŠ” ì§„ì…ì°¨ìˆ˜ê°€ 0ì¸ ë…¸ë“œë¥¼ íì— ì‚½ì…
         for (int i = 1; i <= v; i++) {
             if (indegree[i] == 0) {
                 q.offer(i);
             }
         }
 
-        // Å¥°¡ ºô ¶§±îÁö ¹İº¹
+        // íê°€ ë¹Œ ë•Œê¹Œì§€ ë°˜ë³µ
         while (!q.isEmpty()) {
-            // Å¥¿¡¼­ ¿ø¼Ò ²¨³»±â
+            // íì—ì„œ ì›ì†Œ êº¼ë‚´ê¸°
             int now = q.poll();
             result.add(now);
-            // ÇØ´ç ¿ø¼Ò¿Í ¿¬°áµÈ ³ëµåµéÀÇ ÁøÀÔÂ÷¼ö¿¡¼­ 1 »©±â
+            // í•´ë‹¹ ì›ì†Œì™€ ì—°ê²°ëœ ë…¸ë“œë“¤ì˜ ì§„ì…ì°¨ìˆ˜ì—ì„œ 1 ë¹¼ê¸°
             for (int i = 0; i < graph.get(now).size(); i++) {
                 indegree[graph.get(now).get(i)] -= 1;
-                // »õ·Ó°Ô ÁøÀÔÂ÷¼ö°¡ 0ÀÌ µÇ´Â ³ëµå¸¦ Å¥¿¡ »ğÀÔ
+                // ìƒˆë¡­ê²Œ ì§„ì…ì°¨ìˆ˜ê°€ 0ì´ ë˜ëŠ” ë…¸ë“œë¥¼ íì— ì‚½ì…
                 if (indegree[graph.get(now).get(i)] == 0) {
                     q.offer(graph.get(now).get(i));
                 }
             }
         }
 
-        // À§»ó Á¤·ÄÀ» ¼öÇàÇÑ °á°ú Ãâ·Â
+        // ìœ„ìƒ ì •ë ¬ì„ ìˆ˜í–‰í•œ ê²°ê³¼ ì¶œë ¥
         for (int i = 0; i < result.size(); i++) {
             System.out.print(result.get(i) + " ");
         }
@@ -51,17 +51,17 @@ public class p5 {
         v = sc.nextInt();
         e = sc.nextInt();
 
-        // ±×·¡ÇÁ ÃÊ±âÈ­
+        // ê·¸ë˜í”„ ì´ˆê¸°í™”
         for (int i = 0; i <= v; i++) {
             graph.add(new ArrayList<Integer>());
         }
 
-        // ¹æÇâ ±×·¡ÇÁÀÇ ¸ğµç °£¼± Á¤º¸¸¦ ÀÔ·Â ¹Ş±â
+        // ë°©í–¥ ê·¸ë˜í”„ì˜ ëª¨ë“  ê°„ì„  ì •ë³´ë¥¼ ì…ë ¥ ë°›ê¸°
         for (int i = 0; i < e; i++) {
             int a = sc.nextInt();
             int b = sc.nextInt();
-            graph.get(a).add(b); // Á¤Á¡ A¿¡¼­ B·Î ÀÌµ¿ °¡´É
-            // ÁøÀÔ Â÷¼ö¸¦ 1 Áõ°¡
+            graph.get(a).add(b); // ì •ì  Aì—ì„œ Bë¡œ ì´ë™ ê°€ëŠ¥
+            // ì§„ì… ì°¨ìˆ˜ë¥¼ 1 ì¦ê°€
             indegree[b] += 1;
         }
 

@@ -1,14 +1,14 @@
 package Chap5;
 
 /*
- * 1·Î ¸¸µé±â ¹®Á¦
- * Á¤¼ö X°¡ ÁÖ¾îÁ³À» ¶§ »ç¿ëÇÒ ¼ö ÀÖ´Â ¿¬»ê
- * 1. X°¡ 5·Î ³ª´©¾î ¶³¾îÁö¸é 5·Î ³ª´®
- * 2. X°¡ 3À¸·Î ³ª´©¾î ¶³¾îÁö¸é 3À¸·Î ³ª´®
- * 3. X°¡ 2·Î ³ª´©¾î ¶³¾îÁö¸é 2·Î ³ª´®
- * 4. X¿¡¼­ 1À» »­
- * ¿¬»ê 4°³¸¦ »ç¿ëÇÏ¿© 1·Î ¸¸µé°íÀÚ ÇÔ
- * ¿¬»êÀ» »ç¿ëÇÏ´Â È½¼öÀÇ ÃÖ¼Ú°ª ±¸ÇÏ±â
+ * 1ë¡œ ë§Œë“¤ê¸° ë¬¸ì œ
+ * ì •ìˆ˜ Xê°€ ì£¼ì–´ì¡Œì„ ë•Œ ì‚¬ìš©í•  ìˆ˜ ìžˆëŠ” ì—°ì‚°
+ * 1. Xê°€ 5ë¡œ ë‚˜ëˆ„ì–´ ë–¨ì–´ì§€ë©´ 5ë¡œ ë‚˜ëˆ”
+ * 2. Xê°€ 3ìœ¼ë¡œ ë‚˜ëˆ„ì–´ ë–¨ì–´ì§€ë©´ 3ìœ¼ë¡œ ë‚˜ëˆ”
+ * 3. Xê°€ 2ë¡œ ë‚˜ëˆ„ì–´ ë–¨ì–´ì§€ë©´ 2ë¡œ ë‚˜ëˆ”
+ * 4. Xì—ì„œ 1ì„ ëºŒ
+ * ì—°ì‚° 4ê°œë¥¼ ì‚¬ìš©í•˜ì—¬ 1ë¡œ ë§Œë“¤ê³ ìž í•¨
+ * ì—°ì‚°ì„ ì‚¬ìš©í•˜ëŠ” íšŸìˆ˜ì˜ ìµœì†Ÿê°’ êµ¬í•˜ê¸°
  */
 
 import java.util.*;
@@ -16,7 +16,7 @@ import java.util.*;
 public class p4 {
 
 	public static int[] d = new int[30001];
-	
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int x = sc.nextInt();

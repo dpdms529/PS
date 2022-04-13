@@ -20,7 +20,7 @@ class Node2 implements Comparable<Node2> {
         return this.distance;
     }
 
-    // °Å¸®(ºñ¿ë)°¡ ÂªÀº °ÍÀÌ ³ôÀº ¿ì¼±¼øÀ§¸¦ °¡Áöµµ·Ï ¼³Á¤
+    // ê±°ë¦¬(ë¹„ìš©)ê°€ ì§§ì€ ê²ƒì´ ë†’ì€ ìš°ì„ ìˆœìœ„ë¥¼ ê°€ì§€ë„ë¡ ì„¤ì •
     @Override
     public int compareTo(Node2 other) {
         if (this.distance < other.distance) {
@@ -32,31 +32,31 @@ class Node2 implements Comparable<Node2> {
 
 public class p2 {
 
-    public static final int INF = (int) 1e9; // ¹«ÇÑÀ» ÀÇ¹ÌÇÏ´Â °ªÀ¸·Î 10¾ïÀ» ¼³Á¤
-    // ³ëµåÀÇ °³¼ö(N), °£¼±ÀÇ °³¼ö(M), ½ÃÀÛ ³ëµå ¹øÈ£(Start)
-    // ³ëµåÀÇ °³¼ö´Â ÃÖ´ë 100,000°³¶ó°í °¡Á¤
+    public static final int INF = (int) 1e9; // ë¬´í•œì„ ì˜ë¯¸í•˜ëŠ” ê°’ìœ¼ë¡œ 10ì–µì„ ì„¤ì •
+    // ë…¸ë“œì˜ ê°œìˆ˜(N), ê°„ì„ ì˜ ê°œìˆ˜(M), ì‹œì‘ ë…¸ë“œ ë²ˆí˜¸(Start)
+    // ë…¸ë“œì˜ ê°œìˆ˜ëŠ” ìµœëŒ€ 100,000ê°œë¼ê³  ê°€ì •
     public static int n, m, start;
-    // °¢ ³ëµå¿¡ ¿¬°áµÇ¾î ÀÖ´Â ³ëµå¿¡ ´ëÇÑ Á¤º¸¸¦ ´ã´Â ¹è¿­
+    // ê° ë…¸ë“œì— ì—°ê²°ë˜ì–´ ìˆëŠ” ë…¸ë“œì— ëŒ€í•œ ì •ë³´ë¥¼ ë‹´ëŠ” ë°°ì—´
     public static ArrayList<ArrayList<Node2>> graph = new ArrayList<ArrayList<Node2>>();
-    // ÃÖ´Ü °Å¸® Å×ÀÌºí ¸¸µé±â
+    // ìµœë‹¨ ê±°ë¦¬ í…Œì´ë¸” ë§Œë“¤ê¸°
     public static int[] d = new int[100001];
 
     public static void dijkstra(int start) {
         PriorityQueue<Node2> pq = new PriorityQueue<>();
-        // ½ÃÀÛ ³ëµå·Î °¡±â À§ÇÑ ÃÖ´Ü °æ·Î´Â 0À¸·Î ¼³Á¤ÇÏ¿©, Å¥¿¡ »ğÀÔ
+        // ì‹œì‘ ë…¸ë“œë¡œ ê°€ê¸° ìœ„í•œ ìµœë‹¨ ê²½ë¡œëŠ” 0ìœ¼ë¡œ ì„¤ì •í•˜ì—¬, íì— ì‚½ì…
         pq.offer(new Node2(start, 0));
         d[start] = 0;
-        while(!pq.isEmpty()) { // Å¥°¡ ºñ¾îÀÖÁö ¾Ê´Ù¸é
-            // °¡Àå ÃÖ´Ü °Å¸®°¡ ÂªÀº ³ëµå¿¡ ´ëÇÑ Á¤º¸ ²¨³»±â
+        while(!pq.isEmpty()) { // íê°€ ë¹„ì–´ìˆì§€ ì•Šë‹¤ë©´
+            // ê°€ì¥ ìµœë‹¨ ê±°ë¦¬ê°€ ì§§ì€ ë…¸ë“œì— ëŒ€í•œ ì •ë³´ êº¼ë‚´ê¸°
             Node2 node = pq.poll();
-            int dist = node.getDistance(); // ÇöÀç ³ëµå±îÁöÀÇ ºñ¿ë 
-            int now = node.getIndex(); // ÇöÀç ³ëµå
-            // ÇöÀç ³ëµå°¡ ÀÌ¹Ì Ã³¸®µÈ ÀûÀÌ ÀÖ´Â ³ëµå¶ó¸é ¹«½Ã
+            int dist = node.getDistance(); // í˜„ì¬ ë…¸ë“œê¹Œì§€ì˜ ë¹„ìš©
+            int now = node.getIndex(); // í˜„ì¬ ë…¸ë“œ
+            // í˜„ì¬ ë…¸ë“œê°€ ì´ë¯¸ ì²˜ë¦¬ëœ ì ì´ ìˆëŠ” ë…¸ë“œë¼ë©´ ë¬´ì‹œ
             if (d[now] < dist) continue;
-            // ÇöÀç ³ëµå¿Í ¿¬°áµÈ ´Ù¸¥ ÀÎÁ¢ÇÑ ³ëµåµéÀ» È®ÀÎ
+            // í˜„ì¬ ë…¸ë“œì™€ ì—°ê²°ëœ ë‹¤ë¥¸ ì¸ì ‘í•œ ë…¸ë“œë“¤ì„ í™•ì¸
             for (int i = 0; i < graph.get(now).size(); i++) {
                 int cost = d[now] + graph.get(now).get(i).getDistance();
-                // ÇöÀç ³ëµå¸¦ °ÅÃÄ¼­, ´Ù¸¥ ³ëµå·Î ÀÌµ¿ÇÏ´Â °Å¸®°¡ ´õ ÂªÀº °æ¿ì
+                // í˜„ì¬ ë…¸ë“œë¥¼ ê±°ì³ì„œ, ë‹¤ë¥¸ ë…¸ë“œë¡œ ì´ë™í•˜ëŠ” ê±°ë¦¬ê°€ ë” ì§§ì€ ê²½ìš°
                 if (cost < d[graph.get(now).get(i).getIndex()]) {
                     d[graph.get(now).get(i).getIndex()] = cost;
                     pq.offer(new Node2(graph.get(now).get(i).getIndex(), cost));
@@ -72,33 +72,33 @@ public class p2 {
         m = sc.nextInt();
         start = sc.nextInt();
 
-        // ±×·¡ÇÁ ÃÊ±âÈ­
+        // ê·¸ë˜í”„ ì´ˆê¸°í™”
         for (int i = 0; i <= n; i++) {
             graph.add(new ArrayList<Node2>());
         }
-        
-        // ¸ğµç °£¼± Á¤º¸¸¦ ÀÔ·Â¹Ş±â
+
+        // ëª¨ë“  ê°„ì„  ì •ë³´ë¥¼ ì…ë ¥ë°›ê¸°
         for (int i = 0; i < m; i++) {
             int a = sc.nextInt();
             int b = sc.nextInt();
             int c = sc.nextInt();
-            // a¹ø ³ëµå¿¡¼­ b¹ø ³ëµå·Î °¡´Â ºñ¿ëÀÌ c¶ó´Â ÀÇ¹Ì
+            // aë²ˆ ë…¸ë“œì—ì„œ bë²ˆ ë…¸ë“œë¡œ ê°€ëŠ” ë¹„ìš©ì´ cë¼ëŠ” ì˜ë¯¸
             graph.get(a).add(new Node2(b, c));
         }
 
-        // ÃÖ´Ü °Å¸® Å×ÀÌºíÀ» ¸ğµÎ ¹«ÇÑÀ¸·Î ÃÊ±âÈ­
+        // ìµœë‹¨ ê±°ë¦¬ í…Œì´ë¸”ì„ ëª¨ë‘ ë¬´í•œìœ¼ë¡œ ì´ˆê¸°í™”
         Arrays.fill(d, INF);
-        
-        // ´ÙÀÍ½ºÆ®¶ó ¾Ë°í¸®ÁòÀ» ¼öÇà
+
+        // ë‹¤ìµìŠ¤íŠ¸ë¼ ì•Œê³ ë¦¬ì¦˜ì„ ìˆ˜í–‰
         dijkstra(start);
 
-        // ¸ğµç ³ëµå·Î °¡±â À§ÇÑ ÃÖ´Ü °Å¸®¸¦ Ãâ·Â
+        // ëª¨ë“  ë…¸ë“œë¡œ ê°€ê¸° ìœ„í•œ ìµœë‹¨ ê±°ë¦¬ë¥¼ ì¶œë ¥
         for (int i = 1; i <= n; i++) {
-            // µµ´ŞÇÒ ¼ö ¾ø´Â °æ¿ì, ¹«ÇÑ(INFINITY)ÀÌ¶ó°í Ãâ·Â
+            // ë„ë‹¬í•  ìˆ˜ ì—†ëŠ” ê²½ìš°, ë¬´í•œ(INFINITY)ì´ë¼ê³  ì¶œë ¥
             if (d[i] == INF) {
                 System.out.println("INFINITY");
             }
-            // µµ´ŞÇÒ ¼ö ÀÖ´Â °æ¿ì °Å¸®¸¦ Ãâ·Â
+            // ë„ë‹¬í•  ìˆ˜ ìˆëŠ” ê²½ìš° ê±°ë¦¬ë¥¼ ì¶œë ¥
             else {
                 System.out.println(d[i]);
             }

@@ -1,11 +1,11 @@
 package Chap3;
 
-//°è¼öÁ¤·Ä
+//ê³„ìˆ˜ì •ë ¬
 
 import java.util.*;
 
 public class p4 {
-	
+
 	public static final int MAX_VALUE = 9;
 
 	public static void main(String[] args) {

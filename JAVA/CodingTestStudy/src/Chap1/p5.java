@@ -1,16 +1,16 @@
 package Chap1;
 
 /*
- * »óÇÏÁÂ¿ì ¹®Á¦
- * N x N Å©±âÀÇ Á¤»ç°¢Çü °ø°£
- * °¡Àå ¿ÞÂÊ À§ ÁÂÇ¥´Â (1,1), °¡Àå ¿À¸¥ÂÊ ¾Æ·¡ ÁÂÇ¥´Â (N,N)
- * ¿©Çà°¡ A´Â »ó,ÇÏ,ÁÂ,¿ì·Î ÀÌµ¿ °¡´É, ½ÃÀÛÁÂÇ¥´Â (1,1)
- * ¿©Çà°èÈ¹¼­
- * L : ¿ÞÂÊÀ¸·Î ÇÑ Ä­ ÀÌµ¿
- * R : ¿À¸¥ÂÊÀ¸·Î ÇÑ Ä­ ÀÌµ¿
- * U : À§·Î ÇÑ Ä­ ÀÌµ¿
- * D : ¾Æ·¡·Î ÇÑ Ä­ ÀÌµ¿
- * N x N °ø°£ ¹þ¾î³ª´Â ÀÌµ¿Àº ¹«½Ã
+ * ìƒí•˜ì¢Œìš° ë¬¸ì œ
+ * N x N í¬ê¸°ì˜ ì •ì‚¬ê°í˜• ê³µê°„
+ * ê°€ìž¥ ì™¼ìª½ ìœ„ ì¢Œí‘œëŠ” (1,1), ê°€ìž¥ ì˜¤ë¥¸ìª½ ì•„ëž˜ ì¢Œí‘œëŠ” (N,N)
+ * ì—¬í–‰ê°€ AëŠ” ìƒ,í•˜,ì¢Œ,ìš°ë¡œ ì´ë™ ê°€ëŠ¥, ì‹œìž‘ì¢Œí‘œëŠ” (1,1)
+ * ì—¬í–‰ê³„íšì„œ
+ * L : ì™¼ìª½ìœ¼ë¡œ í•œ ì¹¸ ì´ë™
+ * R : ì˜¤ë¥¸ìª½ìœ¼ë¡œ í•œ ì¹¸ ì´ë™
+ * U : ìœ„ë¡œ í•œ ì¹¸ ì´ë™
+ * D : ì•„ëž˜ë¡œ í•œ ì¹¸ ì´ë™
+ * N x N ê³µê°„ ë²—ì–´ë‚˜ëŠ” ì´ë™ì€ ë¬´ì‹œ
  */
 
 import java.util.*;
@@ -23,11 +23,11 @@ public class p5 {
 		sc.nextLine();
 		String[] plans = sc.nextLine().split(" ");
 		int x = 1, y = 1;
-		
+
 		int dx[] = {0,0,-1,1};
 		int dy[] = {-1,1,0,0};
 		char[] moveTypes = {'L', 'R', 'U', 'D'};
-		
+
 		for(int i = 0;i<plans.length;i++) {
 			char plan = plans[i].charAt(0);
 			int nx = -1, ny = -1;

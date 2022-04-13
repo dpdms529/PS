@@ -1,15 +1,15 @@
 package Chap5;
 
 /*
- * °³¹Ì Àü»ç ¹®Á¦
- * ½Ä·®Ã¢°í N°³¿¡ ´ëÇÑ Á¤º¸°¡ ÁÖ¾îÁ³À» ¶§ ¾òÀ» ¼ö ÀÖ´Â ½Ä·®ÀÇ ÃÖ´ë°ª ±¸ÇÏ±â
- * ÃÖ¼ÒÇÑ ÇÑ Ä­ ÀÌ»ó ¶³¾îÁø ½Ä·®Ã¢°í¸¦ ¾àÅ»ÇØ¾ß ÇÔ
+ * ê°œë¯¸ ì „ì‚¬ ë¬¸ì œ
+ * ì‹ëŸ‰ì°½ê³  Nê°œì— ëŒ€í•œ ì •ë³´ê°€ ì£¼ì–´ì¡Œì„ ë•Œ ì–»ì„ ìˆ˜ ìˆëŠ” ì‹ëŸ‰ì˜ ìµœëŒ€ê°’ êµ¬í•˜ê¸°
+ * ìµœì†Œí•œ í•œ ì¹¸ ì´ìƒ ë–¨ì–´ì§„ ì‹ëŸ‰ì°½ê³ ë¥¼ ì•½íƒˆí•´ì•¼ í•¨
  */
 
 import java.util.*;
 
 public class p3 {
-	
+
 	public static int[] d = new int[100];
 
 	public static void main(String[] args) {
@@ -19,14 +19,14 @@ public class p3 {
 		for(int i = 0;i<n;i++) {
 			arr[i] = sc.nextInt();
 		}
-		
+
 		d[0] = arr[0];
 		d[1] = arr[1];
 		for(int i = 2;i<n;i++) {
 			d[i] = Math.max(d[i-1], d[i-2] + arr[i]);
 		}
 		System.out.println(d[n-1]);
-		
+
 
 	}
 

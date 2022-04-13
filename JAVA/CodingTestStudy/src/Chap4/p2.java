@@ -3,7 +3,7 @@ package Chap4;
 import java.util.*;
 
 public class p2 {
-	
+
 	public static int binarySearch(int[] arr, int target, int start, int end) {
 		while(start <= end) {
 			int mid = (start + end) / 2;
@@ -15,19 +15,19 @@ public class p2 {
 	}
 
 	public static void main(String[] args) {
-Scanner sc = new Scanner(System.in);
-		
+		Scanner sc = new Scanner(System.in);
+
 		int n = sc.nextInt();
 		int target = sc.nextInt();
-		
+
 		int[] arr = new int[n];
 		for(int i = 0;i<n;i++) {
 			arr[i] = sc.nextInt();
 		}
-		
+
 		int result = binarySearch(arr, target, 0, n-1);
 		if(result == -1) {
-			System.out.println("¿ø¼Ò°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù");
+			System.out.println("ì›ì†Œê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤");
 		}else {
 			System.out.println(result + 1);
 		}

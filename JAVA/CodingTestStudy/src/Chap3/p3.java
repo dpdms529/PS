@@ -1,35 +1,35 @@
 package Chap3;
 
-//ÄüÁ¤·Ä
+//í€µì •ë ¬
 
 import java.util.*;
 
 public class p3 {
-	
+
 	public static void quickSort(int[] arr, int start, int end) {
-		if(start >= end) return;	//¿ø¼Ò°¡ 1°³ÀÎ °æ¿ì Á¾·á
-		int pivot = start;	//ÇÇ¹şÀº Ã¹ ¹øÂ° ¿ø¼Ò
+		if(start >= end) return;	//ì›ì†Œê°€ 1ê°œì¸ ê²½ìš° ì¢…ë£Œ
+		int pivot = start;	//í”¼ë²—ì€ ì²« ë²ˆì§¸ ì›ì†Œ
 		int left = start + 1;
 		int right = end;
 		while(left<=right) {
-			//ÇÇ¹şº¸´Ù Å« µ¥ÀÌÅÍ¸¦ Ã£À» ¶§±îÁö ¹İº¹
+			//í”¼ë²—ë³´ë‹¤ í° ë°ì´í„°ë¥¼ ì°¾ì„ ë•Œê¹Œì§€ ë°˜ë³µ
 			while(left <= end && arr[left] <= arr[pivot]) left++;
-			//ÇÇ¹şº¸´Ù ÀÛÀº µ¥ÀÌÅÍ¸¦ Ã£À» ¶§±îÁö ¹İº¹
+			//í”¼ë²—ë³´ë‹¤ ì‘ì€ ë°ì´í„°ë¥¼ ì°¾ì„ ë•Œê¹Œì§€ ë°˜ë³µ
 			while(right > start && arr[right] >= arr[pivot]) right--;
-			//¾ù°¥·È´Ù¸é ÀÛÀº µ¥ÀÌÅÍ¿Í ÇÇ¹şÀ» ±³Ã¼
+			//ì—‡ê°ˆë ¸ë‹¤ë©´ ì‘ì€ ë°ì´í„°ì™€ í”¼ë²—ì„ êµì²´
 			if(left > right) {
 				int temp = arr[pivot];
 				arr[pivot] = arr[right];
 				arr[right] = temp;
 			}
-			//¾ù°¥¸®Áö ¾Ê¾Ò´Ù¸é ÀÛÀº µ¥ÀÌÅÍ¿Í Å« µ¥ÀÌÅÍ¸¦ ±³Ã¼
+			//ì—‡ê°ˆë¦¬ì§€ ì•Šì•˜ë‹¤ë©´ ì‘ì€ ë°ì´í„°ì™€ í° ë°ì´í„°ë¥¼ êµì²´
 			else {
 				int temp = arr[left];
 				arr[left] = arr[right];
 				arr[right] = temp;
 			}
 		}
-		//ºĞÇÒ ÀÌÈÄ ¿ŞÂÊ ºÎºĞ°ú ¿À¸¥ÂÊ ºÎºĞ¿¡¼­ °¢°¢ Á¤·Ä ¼öÇà
+		//ë¶„í•  ì´í›„ ì™¼ìª½ ë¶€ë¶„ê³¼ ì˜¤ë¥¸ìª½ ë¶€ë¶„ì—ì„œ ê°ê° ì •ë ¬ ìˆ˜í–‰
 		quickSort(arr, start, right-1);
 		quickSort(arr, right+1, end);
 	}

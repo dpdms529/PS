@@ -3,12 +3,12 @@ package Chap8;
 import java.util.*;
 
 class p4 {
-    public static int n = 5; // µ¥ÀÌÅÍÀÇ °³¼ö N°ú µ¥ÀÌÅÍ ÀÔ·Â¹Ş±â
+    public static int n = 5; // ë°ì´í„°ì˜ ê°œìˆ˜ Nê³¼ ë°ì´í„° ì…ë ¥ë°›ê¸°
     public static int arr[] = {10, 20, 30, 40, 50};
     public static int[] prefixSum = new int[6];
 
     public static void main(String[] args) {
-        // Á¢µÎ»ç ÇÕ(Prefix Sum) ¹è¿­ °è»ê
+        // ì ‘ë‘ì‚¬ í•©(Prefix Sum) ë°°ì—´ ê³„ì‚°
         int sumValue = 0;
 
         for (int i = 0; i < n; i++) {
@@ -16,7 +16,7 @@ class p4 {
             prefixSum[i + 1] = sumValue;
         }
 
-        // ±¸°£ ÇÕ °è»ê(¼¼ ¹øÂ° ¼öºÎÅÍ ³× ¹øÂ° ¼ö±îÁö)
+        // êµ¬ê°„ í•© ê³„ì‚°(ì„¸ ë²ˆì§¸ ìˆ˜ë¶€í„° ë„¤ ë²ˆì§¸ ìˆ˜ê¹Œì§€)
         int left = 3;
         int right = 4;
         System.out.println(prefixSum[right] - prefixSum[left - 1]);

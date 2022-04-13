@@ -1,11 +1,11 @@
 package Chap2;
 
 /*
- * À½·á¼ö ¾ó·Á ¸Ô±â ¹®Á¦
- * N x M Å©±âÀÇ ¾óÀ½ Æ²
- * ±¸¸ÛÀÌ ¶Õ·Á ÀÖ´Â ºÎºĞÀº 0, Ä­¸·ÀÌ°¡ Á¸ÀçÇÏ´Â ºÎºĞÀº 1·Î Ç¥½Ã
- * ±¸¸ÛÀÌ ¶Õ·Á ÀÖ´Â ºÎºĞ³¢¸®´Â »ó,ÇÏ,ÁÂ,¿ì·Î ºÙ¾î ÀÖ´Â °æ¿ì ¼­·Î ¿¬°áµÇ¾î ÀÖ´Â °ÍÀ¸·Î °£ÁÖ
- * ¾óÀ½ Æ²ÀÇ ¸ğ¾çÀÌ ÁÖ¾îÁ³À» ¶§ »ı¼ºµÇ´Â ÃÑ ¾ÆÀÌ½ºÅ©¸²ÀÇ °³¼ö ±¸ÇÏ±â
+ * ìŒë£Œìˆ˜ ì–¼ë ¤ ë¨¹ê¸° ë¬¸ì œ
+ * N x M í¬ê¸°ì˜ ì–¼ìŒ í‹€
+ * êµ¬ë©ì´ ëš«ë ¤ ìˆëŠ” ë¶€ë¶„ì€ 0, ì¹¸ë§‰ì´ê°€ ì¡´ì¬í•˜ëŠ” ë¶€ë¶„ì€ 1ë¡œ í‘œì‹œ
+ * êµ¬ë©ì´ ëš«ë ¤ ìˆëŠ” ë¶€ë¶„ë¼ë¦¬ëŠ” ìƒ,í•˜,ì¢Œ,ìš°ë¡œ ë¶™ì–´ ìˆëŠ” ê²½ìš° ì„œë¡œ ì—°ê²°ë˜ì–´ ìˆëŠ” ê²ƒìœ¼ë¡œ ê°„ì£¼
+ * ì–¼ìŒ í‹€ì˜ ëª¨ì–‘ì´ ì£¼ì–´ì¡Œì„ ë•Œ ìƒì„±ë˜ëŠ” ì´ ì•„ì´ìŠ¤í¬ë¦¼ì˜ ê°œìˆ˜ êµ¬í•˜ê¸°
  */
 
 import java.util.*;
@@ -13,7 +13,7 @@ import java.util.*;
 public class p5 {
 	public static int n, m;
 	public static int[][] graph;
-	
+
 	public static boolean dfs(int x, int y) {
 		if(x<0 || x>=m || y<0 || y>=n) {
 			return false;
@@ -28,29 +28,29 @@ public class p5 {
 		}
 		return false;
 	}
-	
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
+
 		n = sc.nextInt();
 		m = sc.nextInt();
 		graph = new int[n][m];
 		sc.nextLine();
-		
+
 		for(int i = 0;i<n;i++) {
 			String s = sc.nextLine();
 			for(int j = 0;j<m;j++) {
 				graph[i][j] = s.charAt(j) - '0';
 			}
 		}
-		
+
 		int cnt = 0;
 		for(int i = 0;i<n;i++) {
 			for(int j = 0;j<m;j++) {
 				if(dfs(j,i)) cnt++;
 			}
 		}
-		
+
 		System.out.println(cnt);
 	}
 }

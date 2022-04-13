@@ -1,14 +1,14 @@
 package Chap4;
 
 /*
- * Á¤·ÄµÈ ¹è¿­¿¡¼­ Æ¯Á¤ ¼öÀÇ °³¼ö ±¸ÇÏ±â ¹®Á¦
- * ¿À¸§Â÷¼øÀ¸·Î Á¤·ÄµÈ N°³ÀÇ ¿ø¼Ò¸¦ Æ÷ÇÔÇÏ´Â ¼ö¿­¿¡¼­ x°¡ µîÀåÇÏ´Â È½¼ö °è»êÇÏ±â
+ * ì •ë ¬ëœ ë°°ì—´ì—ì„œ íŠ¹ì • ìˆ˜ì˜ ê°œìˆ˜ êµ¬í•˜ê¸° ë¬¸ì œ
+ * ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬ëœ Nê°œì˜ ì›ì†Œë¥¼ í¬í•¨í•˜ëŠ” ìˆ˜ì—´ì—ì„œ xê°€ ë“±ì¥í•˜ëŠ” íšŸìˆ˜ ê³„ì‚°í•˜ê¸°
  */
 
 import java.util.*;
 
 public class p4 {
-	
+
 	public static int lowerBound(int[] arr, int target, int start, int end) {
 		while(start < end) {
 			int mid = (start + end) / 2;
@@ -17,7 +17,7 @@ public class p4 {
 		}
 		return end;
 	}
-	
+
 	public static int upperBound(int[] arr, int target, int start, int end) {
 		while(start < end) {
 			int mid = (start + end) / 2;
@@ -26,7 +26,7 @@ public class p4 {
 		}
 		return end;
 	}
-	
+
 	public static int countByRange(int[] arr, int leftValue, int rightValue) {
 		int rightIndex = upperBound(arr, rightValue, 0, arr.length);
 		int leftIndex = lowerBound(arr, leftValue, 0, arr.length);
@@ -41,9 +41,9 @@ public class p4 {
 		for(int i = 0;i<n;i++) {
 			arr[i] = sc.nextInt();
 		}
-		
+
 		int cnt = countByRange(arr, x, x);
-		
+
 		if(cnt == 0) System.out.println(-1);
 		else System.out.println(cnt);
 

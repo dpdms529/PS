@@ -1,6 +1,6 @@
 package Chap3;
 
-//»ğÀÔÁ¤·Ä
+//ì‚½ì…ì •ë ¬
 
 import java.util.*;
 
@@ -19,7 +19,7 @@ public class p2 {
 				else break;
 			}
 		}
-		
+
 		for(int i = 0;i<n;i++) {
 			System.out.print(arr[i] + " ");
 		}

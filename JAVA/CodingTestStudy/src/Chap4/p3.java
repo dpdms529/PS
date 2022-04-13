@@ -1,10 +1,10 @@
 package Chap4;
 
 /*
- * ¶±º¹ÀÌ ¶± ¸¸µé±â ¹®Á¦
- * ³ôÀÌ H¸¦ ÁöÁ¤ÇÏ¸é ÁÙÁö¾îÁø ¶±À» ÇÑ ¹ø¿¡ Àý´Ü
- * ³ôÀÌ°¡ Hº¸´Ù ±ä ¶±Àº H À§ ºÎºÐÀÌ Àß¸²
- * ¿äÃ»ÇÑ ¶±ÀÇ ÃÑ ±æÀÌ°¡ MÀÏ ¶§ Àû¾îµµ M¸¸Å­ÀÇ ¶±À» ¾ò±â À§ÇØ Àý´Ü±â¿¡ ¼³Á¤ÇÒ ¼ö ÀÖ´Â ³ôÀÌÀÇ ÃÖ´ë°ª ±¸ÇÏ±â
+ * ë–¡ë³µì´ ë–¡ ë§Œë“¤ê¸° ë¬¸ì œ
+ * ë†’ì´ Hë¥¼ ì§€ì •í•˜ë©´ ì¤„ì§€ì–´ì§„ ë–¡ì„ í•œ ë²ˆì— ì ˆë‹¨
+ * ë†’ì´ê°€ Hë³´ë‹¤ ê¸´ ë–¡ì€ H ìœ„ ë¶€ë¶„ì´ ìž˜ë¦¼
+ * ìš”ì²­í•œ ë–¡ì˜ ì´ ê¸¸ì´ê°€ Mì¼ ë•Œ ì ì–´ë„ Më§Œí¼ì˜ ë–¡ì„ ì–»ê¸° ìœ„í•´ ì ˆë‹¨ê¸°ì— ì„¤ì •í•  ìˆ˜ ìžˆëŠ” ë†’ì´ì˜ ìµœëŒ€ê°’ êµ¬í•˜ê¸°
  */
 
 import java.util.*;
@@ -19,7 +19,7 @@ public class p3 {
 		for(int i = 0;i<n;i++) {
 			arr[i] = sc.nextInt();
 		}
-		
+
 		int start = 0;
 		int end = (int)1e9;
 		int result = 0;
@@ -36,7 +36,7 @@ public class p3 {
 			}
 		}
 		System.out.println(result);
-		
+
 	}
 
 }

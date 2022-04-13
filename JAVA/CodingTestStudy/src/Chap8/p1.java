@@ -3,16 +3,16 @@ package Chap8;
 import java.util.*;
 
 class p1 {
-    // ¼Ò¼ö ÆÇº° ÇÔ¼ö(2ÀÌ»óÀÇ ÀÚ¿¬¼ö¿¡ ´ëÇÏ¿©)
+    // ì†Œìˆ˜ íŒë³„ í•¨ìˆ˜(2ì´ìƒì˜ ìì—°ìˆ˜ì— ëŒ€í•˜ì—¬)
     public static boolean isPrimeNumber(int x) {
-        // 2ºÎÅÍ xÀÇ Á¦°ö±Ù±îÁöÀÇ ¸ğµç ¼ö¸¦ È®ÀÎÇÏ¸ç
+        // 2ë¶€í„° xì˜ ì œê³±ê·¼ê¹Œì§€ì˜ ëª¨ë“  ìˆ˜ë¥¼ í™•ì¸í•˜ë©°
         for (int i = 2; i <= Math.sqrt(x); i++) {
-            // x°¡ ÇØ´ç ¼ö·Î ³ª´©¾î¶³¾îÁø´Ù¸é
+            // xê°€ í•´ë‹¹ ìˆ˜ë¡œ ë‚˜ëˆ„ì–´ë–¨ì–´ì§„ë‹¤ë©´
             if (x % i == 0) {
-                return false; // ¼Ò¼ö°¡ ¾Æ´Ô
+                return false; // ì†Œìˆ˜ê°€ ì•„ë‹˜
             }
         }
-        return true; // ¼Ò¼öÀÓ
+        return true; // ì†Œìˆ˜ì„
     }
 
     public static void main(String[] args) {
