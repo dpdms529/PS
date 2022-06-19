@@ -27,7 +27,7 @@ public class p1541 {
             else result -= sum;
         }
 
-        // result 출력력
+        // result 출력
         System.out.println(result);
     }
 }
