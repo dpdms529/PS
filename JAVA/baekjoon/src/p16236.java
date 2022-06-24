@@ -40,7 +40,7 @@ public class p16236 {
     public static int[] dy = {-1,0,0,1};
     public static int[] dx = {0,-1,1,0};
 
-    public static Shark bfs(Shark s){
+    public static void bfs(Shark s){
         Queue<Shark> queue = new LinkedList<>();
         visited[s.y][s.x] = true;
         queue.offer(s);
@@ -60,7 +60,6 @@ public class p16236 {
                 }
             }
         }
-        return s;
     }
 
     public static void eat(Shark s){
