@@ -72,6 +72,10 @@ public class p1238 {
         dijkstra(x, false);
 
         for(int i = 1;i<n+1;i++){
+            if(i==x){
+                cost[i] = 0;
+                continue;
+            }
             dijkstra(i, true);
             cost[i] = toHome[i] + toParty[x];
             Arrays.fill(toParty, (int)1e9);
