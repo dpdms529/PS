@@ -1,4 +1,4 @@
-package Day02.p1072;
+package p1072;
 
 import java.io.BufferedReader;
 import java.io.IOException;
