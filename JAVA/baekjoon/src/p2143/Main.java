@@ -1,4 +1,4 @@
-package Day02.p2143;
+package p2143;
 
 import java.io.BufferedReader;
 import java.io.IOException;
