@@ -1,7 +1,9 @@
-package Day03.p2042;
+package p2042;
 
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main {
     static int n,m,k;
