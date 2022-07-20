@@ -1,4 +1,4 @@
-package Day03.p1927;
+package p1927;
 
 import java.io.BufferedReader;
 import java.io.IOException;
