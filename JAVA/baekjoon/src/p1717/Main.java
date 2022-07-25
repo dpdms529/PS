@@ -1,7 +1,9 @@
-package Day06.p1717;
+package p1717;
 
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main {
     static int[] parent;
