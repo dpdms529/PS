@@ -1,7 +1,8 @@
-package Day04.p9202;
+package p9202;
 
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 class Node{
     boolean isWord = false;
