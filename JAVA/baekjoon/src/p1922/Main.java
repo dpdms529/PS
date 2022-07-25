@@ -1,7 +1,10 @@
-package Day06.p1922;
+package p1922;
 
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.PriorityQueue;
+import java.util.StringTokenizer;
 
 class Edge implements Comparable<Edge>{
     int from;
