@@ -11,13 +11,13 @@ public class Main {
     static ArrayList<Integer> primes = new ArrayList<>();
 
     static void prime(int k){
-        boolean[] isPrime = new boolean[k];
+        boolean[] isPrime = new boolean[k+1];
         Arrays.fill(isPrime, true);
         isPrime[0] = false;
         isPrime[1] = false;
-        for(int i = 2;i*i<k;i++){
+        for(int i = 2;i*i<=k;i++){
             if(isPrime[i]){
-                for(int j = i*i;j<k;j+=i){
+                for(int j = i*i;j<=k;j+=i){
                     isPrime[j] = false;
                 }
             }
@@ -53,7 +53,6 @@ public class Main {
         int k = Integer.parseInt(st.nextToken());
 
         prime(k);
-        System.out.println(primes);
 
         isGood(p);
     }
