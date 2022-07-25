@@ -1,7 +1,9 @@
-package Day05.p1256;
+package p1256;
 
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main {
     static int[][] dp = new int[201][201];
