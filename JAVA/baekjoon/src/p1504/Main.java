@@ -42,7 +42,7 @@ public class Main {
             int b = Integer.parseInt(st.nextToken());
             int c = Integer.parseInt(st.nextToken());
             graph[a].add(new Edge(b, c));
-            graph[b].add(new Edge(a, c));
+            graph[b].add(new Edge(a, c) );
         }
         st = new StringTokenizer(br.readLine());
         V1 = Integer.parseInt(st.nextToken());
