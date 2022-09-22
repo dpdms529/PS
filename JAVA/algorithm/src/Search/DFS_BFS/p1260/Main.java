@@ -1,4 +1,4 @@
-package GraphSearch.DFS_BFS.p1260;
+package Search.DFS_BFS.p1260;
 
 import java.util.*;
 import java.io.*;
