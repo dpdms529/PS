@@ -1,6 +1,6 @@
-package kakao;
+package p81301;
 
-public class p81301 {
+public class Solution {
     static String num[] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
     
     public static int solution(String s) {
