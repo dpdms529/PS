@@ -4,7 +4,7 @@
 - [구간 합](https://github.com/dpdms529/PS/tree/main/DoitCodingTest/src/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EA%B5%AC%EA%B0%84%ED%95%A9)
 - [투 포인터](https://github.com/dpdms529/PS/tree/main/DoitCodingTest/src/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%ED%88%AC%ED%8F%AC%EC%9D%B8%ED%84%B0)
 - [슬라이딩 윈도우](https://github.com/dpdms529/PS/tree/main/DoitCodingTest/src/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%94%A9%EC%9C%88%EB%8F%84%EC%9A%B0)
-- 스택과 큐
+- [스택과 큐](https://github.com/dpdms529/PS/tree/main/DoitCodingTest/src/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D%EA%B3%BC%ED%81%90)
 
 ## 정렬
 - 버블 정렬
