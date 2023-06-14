@@ -15,7 +15,7 @@
 - 기수 정렬
 
 ## 탐색
-- 깊이 우선 탐색
+- [깊이 우선 탐색](https://github.com/dpdms529/PS/tree/main/DoitCodingTest/src/%ED%83%90%EC%83%89/%EA%B9%8A%EC%9D%B4%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89)
 - 너비 우선 탐색
 - 이진 탐색
 
