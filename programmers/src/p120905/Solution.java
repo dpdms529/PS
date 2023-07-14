@@ -1,2 +1,11 @@
-package p120905;public class Solution {
+package p120905;
+
+import java.util.Arrays;
+
+class Solution {
+    public int[] solution(int n, int[] numlist) {
+        return Arrays.stream(numlist)
+                .filter(i -> i % n == 0)
+                .toArray();
+    }
 }
