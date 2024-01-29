@@ -1,4 +1,4 @@
-package codetree.samsung2023_1_am.p2;
+package codetree.samsung2023_1_pm.p2;
 
 import java.util.*;
 import java.io.*;
@@ -13,7 +13,8 @@ public class Main {
             public int compare(int[] o1, int[] o2) {
                 return Integer.compare(1, 2);
             }
-        }
+
+        };
     }
 
 

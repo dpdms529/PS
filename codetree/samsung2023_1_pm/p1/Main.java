@@ -1,4 +1,4 @@
-package codetree.samsung2023_1_am.p1;
+package codetree.samsung2023_1_pm.p1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
