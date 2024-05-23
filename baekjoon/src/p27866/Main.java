@@ -1,2 +1,12 @@
-package p27866;public class Main {
+package p27866;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        int i = sc.nextInt() - 1;
+        System.out.println(s.charAt(i));
+    }
 }
